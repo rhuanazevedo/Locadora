@@ -1,6 +1,25 @@
 package model;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo_veiculo", discriminatorType = DiscriminatorType.STRING)
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public abstract class Veiculo {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE) //Gerar id automaticamente
+    @Column(name = "veiculo_id", nullable = false)
+    protected int id;
+
     protected String placa;
     protected String modelo;
     protected String categoria;
@@ -9,15 +28,8 @@ public abstract class Veiculo {
     protected boolean disponivel;
     protected double valorDiaria;
 
-    public Veiculo(String placa, String modelo, String categoria, int quantidade, int ano, double valorDiaria) {
-        this.placa = placa;
-        this.modelo = modelo;
-        this.categoria = categoria;
-        this.quantidade = quantidade;
-        this.ano = ano;
-        this.valorDiaria = valorDiaria;
-        boolean disponivel = true;
-    }
+    @OneToMany(mappedBy = "veiculo", cascade = CascadeType.REMOVE)
+    protected List<Locacao> locacoes;
 
     public String getPlaca() {
         return placa;
