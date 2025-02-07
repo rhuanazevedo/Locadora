@@ -19,7 +19,6 @@ public abstract class Veiculo {
     @GeneratedValue(strategy = GenerationType.SEQUENCE) //Gerar id automaticamente
     @Column(name = "veiculo_id", nullable = false)
     protected int id;
-
     protected String placa;
     protected String modelo;
     protected String categoria;

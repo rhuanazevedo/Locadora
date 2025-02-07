@@ -29,6 +29,7 @@ public class Locacao {
     private LocalDate dataLocacao;
     private LocalDate dataDevolucao;
     private double valorDiaria;
+    private boolean ativo;
 
 
 

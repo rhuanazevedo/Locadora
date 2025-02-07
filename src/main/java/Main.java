@@ -1,9 +1,16 @@
+import org.hibernate.Hibernate;
+import org.hibernate.SessionFactory;
+import util.HibernateUtil;
+
+import javax.security.auth.login.Configuration;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.printf("Hello and welcome!");
+        try {
+            HibernateUtil.getSessionFactory().openSession();
 
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("i = " + i);
+        } catch (Exception e) {
+
         }
     }
 }
