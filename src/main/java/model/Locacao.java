@@ -31,8 +31,6 @@ public class Locacao {
     private double valorDiaria;
     private boolean ativo;
 
-
-
     private double calculoValorLocacao(){
         return valorDiaria * ChronoUnit.DAYS.between(dataLocacao, dataDevolucao);
     }
