@@ -26,10 +26,39 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     private void carregarClientes() {
+        List<Cliente> c = new ArrayList<>();
+        String[] nomes = {"João", "Maria", "Carlos", "Ana", "Pedro", "Juliana", "Marcos", "Camila", "Fernando", "Bianca",
+                "Rafael", "Larissa", "Lucas", "Fernanda", "Tiago", "Aline", "Eduardo", "Paula", "Ricardo", "Sofia"};
+
+        Random random = new Random();
+
+        for (int i = 0; i < 20; i++) {
+            String nome = nomes[i];
+            String cpf = gerarCPF();
+            String telefone = "(11) 9" + (random.nextInt(90000) + 10000) + "-" + (random.nextInt(9000) + 1000);
+            LocalDate dataNascimento = LocalDate.of(random.nextInt(30) + 1970, random.nextInt(12) + 1, random.nextInt(28) + 1);
+
+            Cliente cliente = new Cliente();
+            cliente.setNome(nome);
+            cliente.setCpf(cpf);
+            cliente.setTelefone(telefone);
+            cliente.setDataNascimento(dataNascimento);
+
+            clienteController.save(cliente);
+        }
+
         List<Cliente> clientes = clienteController.getAll();
         clienteTableModel = new ClienteTableModel(clientes);
         tableCliente.setModel(clienteTableModel);
 
+    }
+
+    private String gerarCPF() {
+        Random random = new Random();
+        return random.nextInt(900) + 100 + "." +
+                random.nextInt(900) + 100 + "." +
+                random.nextInt(900) + 100 + "-" +
+                random.nextInt(90) + 10;
     }
 
 

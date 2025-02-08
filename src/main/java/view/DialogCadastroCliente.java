@@ -25,9 +25,11 @@ public class DialogCadastroCliente extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         txtDataNascimento.setDateFormatString("dd/MM/yyyy");
+        txtDataNascimento.getJCalendar().setWeekOfYearVisible(false);
         Date date = new Date();
-     
-        txtDataNascimento.setMaxSelectableDate(Date.from(LocalDate.now().minusYears(18).atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        date = Date.from(LocalDate.now().minusYears(18).atStartOfDay(ZoneId.systemDefault()).toInstant());
+        txtDataNascimento.setMaxSelectableDate(date);
+        txtDataNascimento.setDate(date);
     }
     
    
@@ -86,7 +88,7 @@ public class DialogCadastroCliente extends javax.swing.JDialog {
         });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setText("Data");
+        jLabel5.setText("Data de Nascimento");
 
         btnCadastrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCadastrar.setText("CADASTRAR");
@@ -97,16 +99,7 @@ public class DialogCadastroCliente extends javax.swing.JDialog {
         });
 
         lblImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        String caminhoImagem = "src/main/java/imgs/cliente.png";
-        File arquivo = new File(caminhoImagem);
-
-        if (arquivo.exists()) {
-            lblImg.setIcon(new ImageIcon(arquivo.getAbsolutePath()));
-        } else {
-            System.out.println("Imagem não encontrada!");
-        }
-
+        lblImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/cliente.png"))); // NOI18N
         lblImg.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
