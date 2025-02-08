@@ -30,7 +30,7 @@ public class HibernateUtil {
             configuration.setProperty("hibernate.default_schema", "locadora");
             configuration.setProperty("hibernate.connection.username", "postgres");
             configuration.setProperty("hibernate.connection.password", "admin");
-            configuration.setProperty("hibernate.hbm2ddl.auto", "create");
+            configuration.setProperty("hibernate.hbm2ddl.auto", "update");
             configuration.setProperty("hibernate.show_sql", "true");
 
             // Criando o ServiceRegistry corretamente

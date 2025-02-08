@@ -12,7 +12,7 @@ import java.util.List;
 public class ClienteRepository {
     Session session;
 
-    public ClienteRepository(SessionFactory sessionFactory) {
+    public ClienteRepository() {
     }
 
     public void save(Cliente cliente) {
