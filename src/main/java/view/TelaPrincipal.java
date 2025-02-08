@@ -32,6 +32,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     }
 
+    public void addCliente(Cliente cliente) {
+        this.clienteTableModel.addCliente(cliente);
+        this.tableCliente.updateUI();
+    }
+
 
 
     @SuppressWarnings("unchecked")
@@ -207,7 +212,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroClienteActionPerformed
-        DialogCadastroCliente cadastro = new DialogCadastroCliente(this, true);
+        DialogCadastroCliente cadastro = new DialogCadastroCliente(this, true, clienteController);
         cadastro.setLocationRelativeTo(this);
         cadastro.setVisible(true); 
     }//GEN-LAST:event_btnCadastroClienteActionPerformed

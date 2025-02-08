@@ -45,5 +45,9 @@ public class ClienteTableModel extends AbstractTableModel {
         this.clientes = clientes;
         fireTableDataChanged();
     }
+
+    public void addCliente(Cliente cliente) {
+        this.clientes.add(cliente);
+    }
 }
 

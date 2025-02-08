@@ -5,9 +5,12 @@
 package view;
 
 import com.toedter.calendar.JDateChooser;
+import controller.ClienteController;
+import model.Cliente;
 
 import javax.swing.*;
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -20,13 +23,16 @@ import java.util.Date;
  */
 public class DialogCadastroCliente extends javax.swing.JDialog {
 
-    
-    public DialogCadastroCliente(java.awt.Frame parent, boolean modal) {
+    ClienteController controller;
+    TelaPrincipal parent;
+
+    public DialogCadastroCliente(TelaPrincipal parent, boolean modal, ClienteController controller) {
         super(parent, modal);
         initComponents();
+        this.controller = controller;
         txtDataNascimento.setDateFormatString("dd/MM/yyyy");
         Date date = new Date();
-     
+        this.parent = parent;
         txtDataNascimento.setMaxSelectableDate(Date.from(LocalDate.now().minusYears(18).atStartOfDay(ZoneId.systemDefault()).toInstant()));
     }
     
@@ -206,12 +212,42 @@ public class DialogCadastroCliente extends javax.swing.JDialog {
     }//GEN-LAST:event_txtTelefoneActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        // TODO add your handling code here:
+        // Pegando valores dos campos de texto
+        String nome = txtNome.getText().trim();
+        String cpf = txtCpf.getText().trim();
+        String telefone = txtTelefone.getText().trim();
+        Date dataNasc = txtDataNascimento.getDate();
+
+        // Validação para evitar campos vazios
+        if (nome.isEmpty() || cpf.isEmpty() || telefone.isEmpty() || dataNasc == null) {
+            JOptionPane.showMessageDialog(this, "Preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Formatando data para dd/MM/yyyy
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String dataFormatada = sdf.format(dataNasc);
+
+        Cliente cliente = new Cliente(nome, cpf, telefone, dataNasc.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+        controller.save(cliente);
+
+        parent.addCliente(cliente);
+
+        // Limpando os campos após cadastro
+        limparCampos();
+
+        JOptionPane.showMessageDialog(this, "Cliente cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
-    
+    private void limparCampos() {
+        txtNome.setText("");
+        txtCpf.setText("");
+        txtTelefone.setText("");
+        txtDataNascimento.setDate(null);
+    }
 
-    
+
+
     /**
      * @param args the command line arguments
      */
@@ -239,21 +275,7 @@ public class DialogCadastroCliente extends javax.swing.JDialog {
         }
         //</editor-fold>
 
-       
-        
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                DialogCadastroCliente dialog = new DialogCadastroCliente(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
