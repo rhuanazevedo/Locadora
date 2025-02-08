@@ -5,24 +5,40 @@
 package view;
 
 import controller.ClienteController;
+import controller.LocacaoController;
+import controller.VeiculoController;
 import model.Cliente;
+import model.Veiculo;
 import table_model.ClienteTableModel;
+import table_model.LocacaoTableModel;
+import table_model.VeiculoTableModel;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 
 public class TelaPrincipal extends javax.swing.JFrame {
 
-    private ClienteController clienteController;
+    private final ClienteController clienteController;
     private ClienteTableModel clienteTableModel;
+
+    private final VeiculoController veiculoController;
+    private VeiculoTableModel veiculoTableModel;
+
+    private final LocacaoController locacaoController;
+    private LocacaoTableModel localTableModel;
 
     public TelaPrincipal() {
         initComponents();
+        locacaoController = new LocacaoController();
+        carregarLocacoes();
         clienteController = new ClienteController();
-        carregarClientes(); // Carrega os clientes ao iniciar
+        carregarClientes();
+        veiculoController = new VeiculoController();
+        carregarVeiculos();
+    }
+
+    private void carregarLocacoes() {
+
     }
 
     private void carregarClientes() {
@@ -50,7 +66,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
         List<Cliente> clientes = clienteController.getAll();
         clienteTableModel = new ClienteTableModel(clientes);
         tableCliente.setModel(clienteTableModel);
+    }
 
+    public void addCliente(Cliente cliente) {
+        this.clienteTableModel.addCliente(cliente);
+        this.tableCliente.updateUI();
+    }
+
+    private void carregarVeiculos() {
+        List<Veiculo> veiculos = veiculoController.getAll();
+        veiculoTableModel = new VeiculoTableModel(veiculos);
+        tableVeiculos.setModel(veiculoTableModel);
+    }
+
+    public void addVeiculo(Veiculo veiculo) {
+        this.veiculoTableModel.addVeiculo(veiculo);
+        this.tableVeiculos.updateUI();
     }
 
     private String gerarCPF() {
@@ -84,13 +115,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tableLocacao.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-            },
-            new String [] {
-                    "Nome", "CPF", "Telefone", "Data de Nascimento"
-            }
-        ));
+
         jScrollPane1.setViewportView(tableLocacao);
 
         btnCadastroLocacao.setText("CADASTRAR");
@@ -125,10 +150,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         tableVeiculos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
             },
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
@@ -236,7 +257,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroClienteActionPerformed
-        DialogCadastroCliente cadastro = new DialogCadastroCliente(this, true);
+        DialogCadastroCliente cadastro = new DialogCadastroCliente(this, true, clienteController);
         cadastro.setLocationRelativeTo(this);
         cadastro.setVisible(true); 
     }//GEN-LAST:event_btnCadastroClienteActionPerformed

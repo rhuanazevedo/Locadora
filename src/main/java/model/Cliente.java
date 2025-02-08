@@ -24,4 +24,11 @@ public class Cliente {
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
     private List<Locacao> locacoes;
+
+    public Cliente(String nome, String cpf, String telefone, LocalDate dataNascimento) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.dataNascimento = dataNascimento;
+    }
 }
