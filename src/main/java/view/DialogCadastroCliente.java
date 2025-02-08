@@ -5,6 +5,9 @@
 package view;
 
 import com.toedter.calendar.JDateChooser;
+
+import javax.swing.*;
+import java.io.File;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -94,7 +97,16 @@ public class DialogCadastroCliente extends javax.swing.JDialog {
         });
 
         lblImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/cliente.png"))); // NOI18N
+
+        String caminhoImagem = "src/main/java/imgs/cliente.png";
+        File arquivo = new File(caminhoImagem);
+
+        if (arquivo.exists()) {
+            lblImg.setIcon(new ImageIcon(arquivo.getAbsolutePath()));
+        } else {
+            System.out.println("Imagem não encontrada!");
+        }
+
         lblImg.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
