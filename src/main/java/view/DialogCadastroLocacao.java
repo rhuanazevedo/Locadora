@@ -27,140 +27,202 @@ public class DialogCadastroLocacao extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        bgTipoVeiculo = new javax.swing.ButtonGroup();
         painelPrincipalCadastroLocacao = new javax.swing.JPanel();
-        txtCpf = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        lblCpf = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
+        lblDataInicial = new javax.swing.JLabel();
+        txtDataInicial = new com.toedter.calendar.JDateChooser();
+        lblDataFinal = new javax.swing.JLabel();
+        txtDataFinal = new com.toedter.calendar.JDateChooser();
+        rbCarro = new javax.swing.JRadioButton();
+        rbMoto = new javax.swing.JRadioButton();
+        TabelaVeiculos = new javax.swing.JScrollPane();
+        tblVeiculos = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        lblNumDiarias = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtNome3 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txtDataNascimento = new com.toedter.calendar.JDateChooser();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        lblNome = new javax.swing.JLabel();
-        txtNome = new javax.swing.JTextField();
+        btnCadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("CADASTRO LOCACAO");
 
         painelPrincipalCadastroLocacao.setPreferredSize(new java.awt.Dimension(800, 800));
 
-        txtCpf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCpfActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setText("CPF:");
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setText("Telefone");
-
-        txtNome3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNome3ActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setText("Data");
-
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("CADASTRAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Cadastrar Locação");
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        lblNome.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblNome.setText("Nome:");
+        lblCpf.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblCpf.setText("CPF do cliente");
+
+        lblDataInicial.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblDataInicial.setText("Data Inicial");
+
+        lblDataFinal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblDataFinal.setText("Data Final");
+
+        bgTipoVeiculo.add(rbCarro);
+        rbCarro.setText("Carro");
+        rbCarro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbCarroActionPerformed(evt);
+            }
+        });
+
+        bgTipoVeiculo.add(rbMoto);
+        rbMoto.setText("Moto");
+        rbMoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbMotoActionPerformed(evt);
+            }
+        });
+
+        tblVeiculos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblVeiculos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TabelaVeiculos.setViewportView(tblVeiculos);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Número de Diárias:");
+
+        lblNumDiarias.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblNumDiarias.setText("num");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("Valor Total:");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 153, 0));
+        jLabel4.setText("R$");
+
+        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCadastrar.setText("CADASTRAR");
+        btnCadastrar.setPreferredSize(new java.awt.Dimension(120, 40));
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelPrincipalCadastroLocacaoLayout = new javax.swing.GroupLayout(painelPrincipalCadastroLocacao);
         painelPrincipalCadastroLocacao.setLayout(painelPrincipalCadastroLocacaoLayout);
         painelPrincipalCadastroLocacaoLayout.setHorizontalGroup(
             painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelPrincipalCadastroLocacaoLayout.createSequentialGroup()
-                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(painelPrincipalCadastroLocacaoLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelPrincipalCadastroLocacaoLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(painelPrincipalCadastroLocacaoLayout.createSequentialGroup()
-                        .addGap(36, 204, Short.MAX_VALUE)
-                        .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelPrincipalCadastroLocacaoLayout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(259, 259, 259))
-                            .addGroup(painelPrincipalCadastroLocacaoLayout.createSequentialGroup()
-                                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNome3)
+                                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblNome)
-                                    .addComponent(jLabel4))
-                                .addGap(72, 72, 72)
-                                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel5)
-                                    .addComponent(txtDataNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                                    .addComponent(txtCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE))))))
-                .addGap(26, 26, 26))
+                                    .addComponent(lblCpf))
+                                .addGap(55, 55, 55)
+                                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblDataInicial)
+                                    .addComponent(txtDataInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(30, 30, 30)
+                                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtDataFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblDataFinal))
+                                .addGap(55, 55, 55)
+                                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rbMoto, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(rbCarro, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(TabelaVeiculos)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(26, 26, 26))
+                    .addGroup(painelPrincipalCadastroLocacaoLayout.createSequentialGroup()
+                        .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelPrincipalCadastroLocacaoLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(painelPrincipalCadastroLocacaoLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblNumDiarias)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(painelPrincipalCadastroLocacaoLayout.createSequentialGroup()
+                .addGap(279, 279, 279)
+                .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         painelPrincipalCadastroLocacaoLayout.setVerticalGroup(
             painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelPrincipalCadastroLocacaoLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(30, 30, 30)
+                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(painelPrincipalCadastroLocacaoLayout.createSequentialGroup()
+                        .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblCpf)
+                            .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblDataInicial)
+                                .addComponent(lblDataFinal)))
+                        .addGap(11, 11, 11)
+                        .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDataInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDataFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(painelPrincipalCadastroLocacaoLayout.createSequentialGroup()
+                        .addComponent(rbCarro)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbMoto)))
+                .addGap(31, 31, 31)
+                .addComponent(TabelaVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(lblNumDiarias))
+                .addGap(18, 18, 18)
+                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(lblNome))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelPrincipalCadastroLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNome3, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(txtDataNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(57, 57, 57)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(209, Short.MAX_VALUE))
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelPrincipalCadastroLocacao, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+            .addComponent(painelPrincipalCadastroLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 700, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelPrincipalCadastroLocacao, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
+            .addComponent(painelPrincipalCadastroLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 569, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void rbCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbCarroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_rbCarroActionPerformed
 
-    private void txtNome3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome3ActionPerformed
+    private void rbMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbMotoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNome3ActionPerformed
+    }//GEN-LAST:event_rbMotoActionPerformed
 
-    private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCpfActionPerformed
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,16 +267,23 @@ public class DialogCadastroLocacao extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JScrollPane TabelaVeiculos;
+    private javax.swing.ButtonGroup bgTipoVeiculo;
+    private javax.swing.JButton btnCadastrar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel lblCpf;
+    private javax.swing.JLabel lblDataFinal;
+    private javax.swing.JLabel lblDataInicial;
+    private javax.swing.JLabel lblNumDiarias;
     private javax.swing.JPanel painelPrincipalCadastroLocacao;
-    private javax.swing.JTextField txtCpf;
-    private com.toedter.calendar.JDateChooser txtDataNascimento;
+    private javax.swing.JRadioButton rbCarro;
+    private javax.swing.JRadioButton rbMoto;
+    private javax.swing.JTable tblVeiculos;
+    private com.toedter.calendar.JDateChooser txtDataFinal;
+    private com.toedter.calendar.JDateChooser txtDataInicial;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtNome3;
     // End of variables declaration//GEN-END:variables
 }

@@ -39,7 +39,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
@@ -55,46 +55,46 @@
                                   <Component id="txtModelo" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
                                   <Component id="lblModelo" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <EmptySpace pref="54" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtPlaca" min="-2" pref="90" max="-2" attributes="0"/>
-                                  <Component id="lblPlaca" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtAno" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="lblAno" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <EmptySpace pref="54" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lblCategoria" min="-2" max="-2" attributes="0"/>
                                   <Component id="cbCategoria" min="-2" pref="135" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <EmptySpace pref="56" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lblCategoria1" max="32767" attributes="0"/>
+                                  <Component id="lblQuantidade" max="32767" attributes="0"/>
                                   <Component id="txtQuantidade" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="txtPlaca1" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                                  <Component id="lblPlaca1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblPlaca" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtPlaca2" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
-                                  <Component id="lblPlaca2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtValorDiaria" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Component id="lblValorDiaria" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtPlaca3" min="-2" pref="105" max="-2" attributes="0"/>
-                                  <Component id="lblPlaca3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtPortaCilindrada" min="-2" pref="105" max="-2" attributes="0"/>
+                                  <Component id="lblPortaCilindrada" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lblPlaca4" max="32767" attributes="0"/>
-                                  <Component id="jComboBox1" max="32767" attributes="0"/>
+                                  <Component id="lblCB" max="32767" attributes="0"/>
+                                  <Component id="cbBoolean" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jLabel1" alignment="0" min="-2" pref="571" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="65" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -119,33 +119,33 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblModelo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblCategoria1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblPlaca" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblQuantidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAno" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="txtModelo" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="cbCategoria" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="txtQuantidade" alignment="1" min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="txtPlaca" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="txtAno" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblPlaca2" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblPlaca1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblPlaca4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblPlaca3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblValorDiaria" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPlaca" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPortaCilindrada" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtPlaca2" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="txtValorDiaria" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="txtPlaca1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="txtPlaca3" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="jComboBox1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="txtPortaCilindrada" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="cbBoolean" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
               <Component id="btnCadastrar1" min="-2" pref="40" max="-2" attributes="0"/>
-              <EmptySpace pref="94" max="32767" attributes="0"/>
+              <EmptySpace pref="29" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -178,7 +178,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtModeloActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblPlaca">
+    <Component class="javax.swing.JLabel" name="lblAno">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="1"/>
@@ -186,9 +186,9 @@
         <Property name="text" type="java.lang.String" value="Ano"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPlaca">
+    <Component class="javax.swing.JTextField" name="txtAno">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPlacaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAnoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCategoria">
@@ -218,7 +218,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblCategoria1">
+    <Component class="javax.swing.JLabel" name="lblQuantidade">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="1"/>
@@ -253,7 +253,7 @@
         <Property name="text" type="java.lang.String" value="Moto"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblPlaca1">
+    <Component class="javax.swing.JLabel" name="lblPlaca">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="1"/>
@@ -266,7 +266,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPlaca1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblPlaca2">
+    <Component class="javax.swing.JLabel" name="lblValorDiaria">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="1"/>
@@ -274,12 +274,12 @@
         <Property name="text" type="java.lang.String" value="Valor da Di&#xe1;ria"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPlaca2">
+    <Component class="javax.swing.JTextField" name="txtValorDiaria">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPlaca2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtValorDiariaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblPlaca3">
+    <Component class="javax.swing.JLabel" name="lblPortaCilindrada">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="1"/>
@@ -287,12 +287,12 @@
         <Property name="text" type="java.lang.String" value="Num. Portas"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPlaca3">
+    <Component class="javax.swing.JTextField" name="txtPortaCilindrada">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPlaca3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPortaCilindradaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblPlaca4">
+    <Component class="javax.swing.JLabel" name="lblCB">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="1"/>
@@ -300,17 +300,18 @@
         <Property name="text" type="java.lang.String" value="Possui Ar-condicionado"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JComboBox" name="cbBoolean">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="2">
+            <StringItem index="0" value="Sim"/>
+            <StringItem index="1" value="N&#xe3;o"/>
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbBooleanActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>

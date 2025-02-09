@@ -7,6 +7,8 @@ package view;
 import controller.ClienteController;
 import controller.LocacaoController;
 import controller.VeiculoController;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import model.Cliente;
 import model.Veiculo;
 import table_model.ClienteTableModel;
@@ -14,6 +16,7 @@ import table_model.LocacaoTableModel;
 import table_model.VeiculoTableModel;
 
 import java.util.List;
+import java.util.Random;
 
 
 public class TelaPrincipal extends javax.swing.JFrame {
