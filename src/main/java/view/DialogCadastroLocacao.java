@@ -12,6 +12,7 @@ import table_model.CarroTableModel;
 import table_model.MotoTableModel;
 import table_model.VeiculoTableModel;
 
+import javax.swing.*;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.time.LocalDate;
@@ -29,6 +30,7 @@ public class DialogCadastroLocacao extends javax.swing.JDialog {
     Veiculo veiculo;
     CarroTableModel carroTableModel;
     MotoTableModel motoTableModel;
+    double aluguel = 0;
 
     public DialogCadastroLocacao(TelaPrincipal parent, boolean modal, LocacaoController controller) {
         super(parent, modal);
@@ -100,6 +102,7 @@ public class DialogCadastroLocacao extends javax.swing.JDialog {
 
         NumberFormat formatoMoeda = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
         lblValor.setText(formatoMoeda.format(aluguel));
+        this.aluguel = aluguel;
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -334,8 +337,12 @@ public class DialogCadastroLocacao extends javax.swing.JDialog {
             veiculo = motoTableModel.getMotoAt(tblVeiculos.getSelectedRow());
         }
 
-        Locacao locacao = new Locacao(veiculo, cliente, dataInicial, dataFinal, Double.parseDouble(lblValor.getText()));
+        Locacao locacao = new Locacao(veiculo, cliente, dataInicial, dataFinal, this.aluguel);
         controller.save(locacao);
+
+        parent.addLocacao(locacao);
+
+        JOptionPane.showMessageDialog(this, "Locação cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_btnCadastrarActionPerformed
 

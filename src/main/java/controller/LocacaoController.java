@@ -12,7 +12,7 @@ public class LocacaoController {
     private ClienteController clienteController = new ClienteController();
     private VeiculoController veiculoController = new VeiculoController();
 
-    public Cliente getClienteByCpf(String cpf){
+    public Cliente getClienteByCpf(String cpf) {
         return clienteController.getByCpf(cpf);
     }
 
@@ -22,6 +22,10 @@ public class LocacaoController {
 
     public void save(Locacao locacao) {
         repository.save(locacao);
+    }
+
+    public List<Locacao> getALl() {
+        return repository.getAll();
     }
 
     public List<Locacao> getLocacoesAtivas() {

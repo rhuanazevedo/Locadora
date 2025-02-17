@@ -40,7 +40,4 @@ public class Locacao {
         this.ativo = true;
     }
 
-    private double calculoValorLocacao(){
-        return valorTotal * ChronoUnit.DAYS.between(dataLocacao, dataDevolucao);
-    }
 }

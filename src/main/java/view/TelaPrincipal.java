@@ -10,6 +10,7 @@ import controller.VeiculoController;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import model.Cliente;
+import model.Locacao;
 import model.Veiculo;
 import table_model.ClienteTableModel;
 import table_model.LocacaoTableModel;
@@ -28,7 +29,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private VeiculoTableModel veiculoTableModel;
 
     private final LocacaoController locacaoController;
-    private LocacaoTableModel localTableModel;
+    private LocacaoTableModel locacaoTableModel;
 
     public TelaPrincipal() {
         initComponents();
@@ -41,7 +42,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     private void carregarLocacoes() {
-
+        List<Locacao> locacoes = locacaoController.getALl();
+        locacaoTableModel = new LocacaoTableModel(locacoes);
+        tableLocacao.setModel(locacaoTableModel);
     }
 
     private void carregarClientes() {
@@ -76,6 +79,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.tableCliente.updateUI();
     }
 
+    public void addLocacao(Locacao locacao){
+        this.locacaoTableModel.addLocacao(locacao);
+        this.tableLocacao.updateUI();
+    }
+
     private void carregarVeiculos() {
         List<Veiculo> veiculos = veiculoController.getAll();
         veiculoTableModel = new VeiculoTableModel(veiculos);
@@ -86,6 +94,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.veiculoTableModel.addVeiculo(veiculo);
         this.tableVeiculos.updateUI();
     }
+
 
     private String gerarCPF() {
         Random random = new Random();
@@ -363,5 +372,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTable tableCliente;
     private javax.swing.JTable tableLocacao;
     private javax.swing.JTable tableVeiculos;
+
+
     // End of variables declaration//GEN-END:variables
 }
