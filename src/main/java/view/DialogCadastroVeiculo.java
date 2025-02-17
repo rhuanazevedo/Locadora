@@ -39,12 +39,10 @@ public class DialogCadastroVeiculo extends javax.swing.JDialog {
         txtAno = new javax.swing.JTextField();
         lblCategoria = new javax.swing.JLabel();
         cbCategoria = new javax.swing.JComboBox<>();
-        lblQuantidade = new javax.swing.JLabel();
-        txtQuantidade = new javax.swing.JTextField();
         rbtnCarro = new javax.swing.JRadioButton();
         rbtnMoto = new javax.swing.JRadioButton();
         lblPlaca = new javax.swing.JLabel();
-        txtPlaca1 = new javax.swing.JTextField();
+        txtPlaca = new javax.swing.JTextField();
         lblValorDiaria = new javax.swing.JLabel();
         txtValorDiaria = new javax.swing.JTextField();
         lblPortaCilindrada = new javax.swing.JLabel();
@@ -96,14 +94,7 @@ public class DialogCadastroVeiculo extends javax.swing.JDialog {
             }
         });
 
-        lblQuantidade.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblQuantidade.setText("Quantidade");
 
-        txtQuantidade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtQuantidadeActionPerformed(evt);
-            }
-        });
 
         bgTipoVeiculo.add(rbtnCarro);
         rbtnCarro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -128,9 +119,9 @@ public class DialogCadastroVeiculo extends javax.swing.JDialog {
         lblPlaca.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblPlaca.setText("Placa");
 
-        txtPlaca1.addActionListener(new java.awt.event.ActionListener() {
+        txtPlaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPlaca1ActionPerformed(evt);
+                txtPlacaActionPerformed(evt);
             }
         });
 
@@ -194,14 +185,10 @@ public class DialogCadastroVeiculo extends javax.swing.JDialog {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(lblCategoria)
-                                                        .addComponent(cbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(lblQuantidade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                        .addComponent(cbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(txtPlaca1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(lblPlaca))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,15 +223,12 @@ public class DialogCadastroVeiculo extends javax.swing.JDialog {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(lblModelo)
                                         .addComponent(lblCategoria)
-                                        .addComponent(lblQuantidade)
                                         .addComponent(lblAno))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtQuantidade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(cbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(35, 35, 35)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(lblValorDiaria)
@@ -255,12 +239,13 @@ public class DialogCadastroVeiculo extends javax.swing.JDialog {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(txtValorDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtPlaca1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtPortaCilindrada, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(cbBoolean, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(56, 56, 56)
                                 .addComponent(btnCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(29, Short.MAX_VALUE))
+
         );
 
         pack();
@@ -274,15 +259,12 @@ public class DialogCadastroVeiculo extends javax.swing.JDialog {
         // TODO add your handling code here:
     }
 
-    private void txtQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
 
     private void txtAnoActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void txtPlaca1ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void txtPlacaActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
@@ -296,7 +278,7 @@ public class DialogCadastroVeiculo extends javax.swing.JDialog {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {
         String modelo = txtModelo.getText();
-        String placa = txtPlaca1.getText();
+        String placa = txtPlaca.getText();
         String categoria = cbCategoria.getSelectedItem().toString();
         int ano = Integer.parseInt(txtAno.getText());
         double valorDiaria = Double.parseDouble(txtValorDiaria.getText());
@@ -323,11 +305,10 @@ public class DialogCadastroVeiculo extends javax.swing.JDialog {
 
     private void limparCampos() {
         txtModelo.setText("");
-        txtPlaca1.setText("");
+        txtPlaca.setText("");
         txtAno.setText("");
         txtValorDiaria.setText("");
         txtPortaCilindrada.setText("");
-        txtQuantidade.setText("");
         cbCategoria.setSelectedIndex(0);
         cbBoolean.setSelectedIndex(0);
     }
@@ -374,15 +355,13 @@ public class DialogCadastroVeiculo extends javax.swing.JDialog {
     private javax.swing.JLabel lblModelo;
     private javax.swing.JLabel lblPlaca;
     private javax.swing.JLabel lblPortaCilindrada;
-    private javax.swing.JLabel lblQuantidade;
     private javax.swing.JLabel lblValorDiaria;
     private javax.swing.JRadioButton rbtnCarro;
     private javax.swing.JRadioButton rbtnMoto;
     private javax.swing.JTextField txtAno;
     private javax.swing.JTextField txtModelo;
-    private javax.swing.JTextField txtPlaca1;
+    private javax.swing.JTextField txtPlaca;
     private javax.swing.JTextField txtPortaCilindrada;
-    private javax.swing.JTextField txtQuantidade;
     private javax.swing.JTextField txtValorDiaria;
     // End of variables declaration
 }

@@ -135,6 +135,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tableLocacao);
 
         btnCadastroLocacao.setText("CADASTRAR");
+        btnCadastroLocacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCadastroLocacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastroLocacaoActionPerformed(evt);
@@ -142,6 +143,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         btnFinalizarLocacao.setText("FINALIZAR");
+        btnFinalizarLocacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnFinalizarLocacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFinalizarLocacaoActionPerformed(evt);
@@ -190,6 +192,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tableVeiculos);
 
         btnCadastroVeiculo.setText("CADASTRAR");
+        btnCadastroVeiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCadastroVeiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastroVeiculoActionPerformed(evt);
@@ -233,6 +236,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jScrollPane3.setViewportView(tableCliente);
 
         btnCadastroCliente.setText("CADASTRAR");
+        btnCadastroCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCadastroCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastroClienteActionPerformed(evt);

@@ -122,6 +122,9 @@
                 <Component class="javax.swing.JButton" name="btnCadastroLocacao">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="CADASTRAR"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastroLocacaoActionPerformed"/>
@@ -130,6 +133,9 @@
                 <Component class="javax.swing.JButton" name="btnFinalizarLocacao">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="FINALIZAR"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFinalizarLocacaoActionPerformed"/>
@@ -196,6 +202,9 @@
                 <Component class="javax.swing.JButton" name="btnCadastroVeiculo">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="CADASTRAR"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastroVeiculoActionPerformed"/>
@@ -262,6 +271,9 @@
                 <Component class="javax.swing.JButton" name="btnCadastroCliente">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="CADASTRAR"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastroClienteActionPerformed"/>
