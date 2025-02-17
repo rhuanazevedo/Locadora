@@ -15,4 +15,11 @@ public class VeiculoController {
     public void save(Veiculo veiculo) {
         repository.save(veiculo);
     }
+
+    public List<Veiculo> getByTipoDisponivel(String tipo) {
+        return repository.getByTipoDisponivel(tipo);
+    }
+
+
+
 }

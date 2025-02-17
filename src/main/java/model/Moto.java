@@ -15,5 +15,9 @@ public class Moto extends Veiculo{
     private int cilindrada;
     private boolean possuiBau;
 
-
+    public Moto(String placa, String modelo, String categoria, int ano, double valorDiaria, int cilindrada, boolean possuiBau) {
+        super(placa, modelo, categoria, ano, valorDiaria);
+        this.cilindrada = cilindrada;
+        this.possuiBau = possuiBau;
+    }
 }

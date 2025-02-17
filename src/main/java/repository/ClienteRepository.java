@@ -51,6 +51,27 @@ public class ClienteRepository {
         return cliente;
     }
 
+    public Cliente getByCpf(String cpf) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+        Cliente cliente = null;
+        try {
+            transaction = session.beginTransaction();
+            cliente = session.createQuery("FROM Cliente WHERE cpf = :cpf", Cliente.class)
+                    .setParameter("cpf", cpf)
+                    .uniqueResult();
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return cliente;
+    }
+
     public List<Cliente> getAll() {
         session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;

@@ -12,7 +12,7 @@ import java.util.List;
 public class LocacaoRepository {
     Session session;
 
-    public LocacaoRepository(SessionFactory sessionFactory) {
+    public LocacaoRepository() {
     }
 
     public void save(Locacao locacao) {
@@ -58,6 +58,25 @@ public class LocacaoRepository {
         try {
             transaction = session.beginTransaction();
             locacoes = session.createQuery("from Locacao", Locacao.class).list();
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return locacoes;
+    }
+
+    public List<Locacao> getAllAtivas() {
+        session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+        List<Locacao> locacoes = null;
+        try {
+            transaction = session.beginTransaction();
+            locacoes = session.createQuery("from Locacao l  WHERE l.ativo = true", Locacao.class).list();
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {

@@ -4,17 +4,14 @@
  */
 package view;
 
-import com.toedter.calendar.JDateChooser;
 import controller.ClienteController;
 import model.Cliente;
 
 import javax.swing.*;
 import java.io.File;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.time.ZoneOffset;
 import java.util.Date;
 
 /**
@@ -35,13 +32,11 @@ public class DialogCadastroCliente extends javax.swing.JDialog {
 
         txtDataNascimento.setDateFormatString("dd/MM/yyyy");
         txtDataNascimento.getJCalendar().setWeekOfYearVisible(false);
-        Date date = new Date();
+        Date date;
         date = Date.from(LocalDate.now().minusYears(18).atStartOfDay(ZoneId.systemDefault()).toInstant());
         txtDataNascimento.setMaxSelectableDate(date);
         txtDataNascimento.setDate(date);
     }
-    
-   
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -248,8 +243,6 @@ public class DialogCadastroCliente extends javax.swing.JDialog {
         txtTelefone.setText("");
         txtDataNascimento.setDate(null);
     }
-
-
 
     /**
      * @param args the command line arguments

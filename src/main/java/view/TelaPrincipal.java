@@ -266,20 +266,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastroClienteActionPerformed
 
     private void btnCadastroVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroVeiculoActionPerformed
-        DialogCadastroVeiculo cadastro = new DialogCadastroVeiculo(this, true);
+        DialogCadastroVeiculo cadastro = new DialogCadastroVeiculo(this, true, veiculoController);
         cadastro.setLocationRelativeTo(this);
         cadastro.setVisible(true); 
     }//GEN-LAST:event_btnCadastroVeiculoActionPerformed
 
     private void btnCadastroLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroLocacaoActionPerformed
-        DialogCadastroLocacao cadastro = new DialogCadastroLocacao(this, true);
+        DialogCadastroLocacao cadastro = new DialogCadastroLocacao(this, true, locacaoController);
         cadastro.setLocationRelativeTo(this);
         cadastro.setVisible(true); 
     }//GEN-LAST:event_btnCadastroLocacaoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

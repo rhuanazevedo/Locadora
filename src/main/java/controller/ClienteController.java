@@ -15,4 +15,8 @@ public class ClienteController {
     public void save(Cliente cliente) {
         repository.save(cliente);
     }
+
+    public Cliente getByCpf(String cpf) {
+        return repository.getByCpf(cpf);
+    }
 }

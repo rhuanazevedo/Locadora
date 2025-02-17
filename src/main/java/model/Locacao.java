@@ -28,10 +28,19 @@ public class Locacao {
 
     private LocalDate dataLocacao;
     private LocalDate dataDevolucao;
-    private double valorDiaria;
+    private double valorTotal;
     private boolean ativo;
 
+    public Locacao(Veiculo veiculo, Cliente cliente, LocalDate dataLocacao, LocalDate dataDevolucao, double valorTotal) {
+        this.veiculo = veiculo;
+        this.cliente = cliente;
+        this.dataLocacao = dataLocacao;
+        this.dataDevolucao = dataDevolucao;
+        this.valorTotal = valorTotal;
+        this.ativo = true;
+    }
+
     private double calculoValorLocacao(){
-        return valorDiaria * ChronoUnit.DAYS.between(dataLocacao, dataDevolucao);
+        return valorTotal * ChronoUnit.DAYS.between(dataLocacao, dataDevolucao);
     }
 }

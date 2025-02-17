@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -30,6 +31,16 @@ public abstract class Veiculo {
     @OneToMany(mappedBy = "veiculo", cascade = CascadeType.REMOVE)
     protected List<Locacao> locacoes;
 
+
+    public Veiculo(String placa, String modelo, String categoria, int ano, double valorDiaria) {
+        this.placa = placa;
+        this.modelo = modelo;
+        this.categoria = categoria;
+        this.ano = ano;
+        this.valorDiaria = valorDiaria;
+        this.locacoes = new ArrayList<>();
+        this.disponivel = true;
+    }
 
     protected void alterarDisponibilidade() {
         disponivel = !disponivel;
