@@ -107,6 +107,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tableLocacao = new javax.swing.JTable();
         btnCadastroLocacao = new javax.swing.JButton();
+        btnFinalizarLocacao = new javax.swing.JButton();
         painelVeiculo = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableVeiculos = new javax.swing.JTable();
@@ -118,7 +119,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-
+        tableLocacao.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tableLocacao.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tableLocacao.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(tableLocacao);
 
         btnCadastroLocacao.setText("CADASTRAR");
@@ -128,14 +141,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnFinalizarLocacao.setText("FINALIZAR");
+        btnFinalizarLocacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFinalizarLocacaoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelLocacaoLayout = new javax.swing.GroupLayout(painelLocacao);
         painelLocacao.setLayout(painelLocacaoLayout);
         painelLocacaoLayout.setHorizontalGroup(
             painelLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLocacaoLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(painelLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnCadastroLocacao)
+                .addGroup(painelLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(painelLocacaoLayout.createSequentialGroup()
+                        .addComponent(btnFinalizarLocacao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCadastroLocacao))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 960, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
@@ -143,7 +166,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
             painelLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLocacaoLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(btnCadastroLocacao)
+                .addGroup(painelLocacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCadastroLocacao)
+                    .addComponent(btnFinalizarLocacao))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(31, Short.MAX_VALUE))
@@ -153,6 +178,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         tableVeiculos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
@@ -277,6 +306,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastro.setVisible(true); 
     }//GEN-LAST:event_btnCadastroLocacaoActionPerformed
 
+    private void btnFinalizarLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarLocacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFinalizarLocacaoActionPerformed
+
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -314,6 +347,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnCadastroCliente;
     private javax.swing.JButton btnCadastroLocacao;
     private javax.swing.JButton btnCadastroVeiculo;
+    private javax.swing.JButton btnFinalizarLocacao;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
