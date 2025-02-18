@@ -16,6 +16,7 @@ import table_model.ClienteTableModel;
 import table_model.LocacaoTableModel;
 import table_model.VeiculoTableModel;
 
+import javax.swing.*;
 import java.util.List;
 import java.util.Random;
 
@@ -361,8 +362,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     private void btnFinalizarLocacaoActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        int indexSelectedRow = tableLocacao.getSelectedRow();
+        if(indexSelectedRow == -1) return;
+
+        int opt = JOptionPane.showConfirmDialog(this, "Deseja finalizar a Locação", "!", JOptionPane.YES_NO_OPTION);
+        if (opt == JOptionPane.YES_OPTION) {
+            Locacao locacaoASerFinalizada = locacaoTableModel.getLocacaoAt(indexSelectedRow);
+            locacaoController.finalizarLocacao(locacaoASerFinalizada);
+            locacaoTableModel.setLocacaoInativaAt(indexSelectedRow);
+            JOptionPane.showMessageDialog(null, "Locação finalizada com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Ação cancelada.");
+        }
+
+
     }
+
 
     private void txtPlacaActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:

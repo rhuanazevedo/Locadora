@@ -117,7 +117,7 @@ public class LocacaoRepository {
             transaction = session.beginTransaction();
             locacoes = session.createQuery(
                             "from Locacao l WHERE (l.cliente.cpf = :cpf OR :cpf = '') AND " +
-                                    "(l.veiculo.placa = :placa OR :cpf = '')", Locacao.class)
+                                    "(l.veiculo.placa = :placa OR :placa = '')", Locacao.class)
                     .setParameter("cpf", cpf)
                     .setParameter("placa", placa)
                     .list();
@@ -132,4 +132,31 @@ public class LocacaoRepository {
         }
         return locacoes;
     }
+
+    public void alterarStatusAtivo(int id, boolean novoStatus) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+
+        try {
+            transaction = session.beginTransaction();
+            Locacao locacao = session.get(Locacao.class, id);
+
+            if (locacao != null) {
+                locacao.setAtivo(novoStatus);
+                session.merge(locacao); // Atualiza a entidade no banco
+                transaction.commit();
+            } else {
+                System.out.println("Locação não encontrada com o ID: " + id);
+            }
+
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+
 }

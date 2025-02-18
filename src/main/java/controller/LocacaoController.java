@@ -37,4 +37,8 @@ public class LocacaoController {
     public List<Locacao> buscarLocacoes(String cpf, String placa) {
         return repository.findByCpfAndPlaca(cpf, placa);
     }
+
+    public void finalizarLocacao(Locacao locacaoASerFinalizada) {
+        repository.alterarStatusAtivo(locacaoASerFinalizada.getId(), false);
+    }
 }

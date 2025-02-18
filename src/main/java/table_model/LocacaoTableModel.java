@@ -44,6 +44,15 @@ public class LocacaoTableModel extends AbstractTableModel {
         return colunas[column];
     }
 
+    public Locacao getLocacaoAt(int row) {
+        return locacoes.get(row);
+    }
+
+    public void setLocacaoInativaAt(int row) {
+        locacoes.get(row).setAtivo(false);
+        fireTableDataChanged();
+    }
+
     public void atualizarLista(List<Locacao> locacoes) {
         this.locacoes = locacoes;
         fireTableDataChanged();
