@@ -4,16 +4,11 @@
  */
 package view;
 
-
 import controller.LocacaoController;
-import controller.VeiculoController;
 import model.*;
 import table_model.CarroTableModel;
 import table_model.MotoTableModel;
-import table_model.VeiculoTableModel;
-
 import javax.swing.*;
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -31,6 +26,8 @@ public class DialogCadastroLocacao extends javax.swing.JDialog {
     Veiculo veiculo;
     CarroTableModel carroTableModel;
     MotoTableModel motoTableModel;
+    LocalDate dataInicial;
+    LocalDate dataFinal;
     double aluguel = 0;
 
     public DialogCadastroLocacao(TelaPrincipal parent, boolean modal, LocacaoController controller) {
@@ -48,13 +45,16 @@ public class DialogCadastroLocacao extends javax.swing.JDialog {
 
         txtDataInicial.setMinSelectableDate(date);
         txtDataFinal.setEnabled(false);
+
+        btnCadastrar.setEnabled(false);
+
         System.out.println(txtDataInicial.getDate());
 
         txtDataInicial.getDateEditor().addPropertyChangeListener("date", evt -> {
             if (txtDataInicial.getDate() != null) {
                 // Converte Date para LocalDate
 
-                LocalDate dataInicial = txtDataInicial.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                dataInicial = txtDataInicial.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
                 // Define a data mínima como dataInicial + 1 dia
                 LocalDate dataMinima = dataInicial.plusDays(1);
@@ -78,7 +78,25 @@ public class DialogCadastroLocacao extends javax.swing.JDialog {
         txtDataFinal.getDateEditor().addPropertyChangeListener("date", evt -> {
             calcularDiferencaDeDias();
             calcularAluguel();
+            txtDataFinal.setEnabled(true);
+
+            if (txtDataFinal.getDate() == null) return;
+
+            dataFinal = txtDataFinal.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+
+                carroTableModel.setCarros(
+                        (List<Carro>) (List<?>) controller.getByTipoDisponivel("Carro", dataInicial, dataFinal)
+                );
+                tblVeiculos.updateUI();
+
+                motoTableModel.setMotos(
+                        (List<Moto>) (List<?>) controller.getByTipoDisponivel("Moto", dataInicial, dataFinal)
+                );
+                tblVeiculos.updateUI();
         });
+
+
 
         carroTableModel = new CarroTableModel(new ArrayList<>());
         tblVeiculos.setModel(carroTableModel);
@@ -359,13 +377,18 @@ public class DialogCadastroLocacao extends javax.swing.JDialog {
         } else {
             veiculo = motoTableModel.getMotoAt(tblVeiculos.getSelectedRow());
         }
+        if(cliente != null) {
+            btnCadastrar.setEnabled(true);
+        } else {
+            btnCadastrar.setEnabled(false);
+        }
         calcularAluguel();
     }//GEN-LAST:event_tblVeiculosMouseReleased
 
     private void calcularDiferencaDeDias() {
         if (txtDataInicial.getDate() != null && txtDataFinal.getDate() != null) {
-            LocalDate dataInicial = txtDataInicial.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            LocalDate dataFinal = txtDataFinal.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            dataInicial = txtDataInicial.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            dataFinal = txtDataFinal.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
             // Calcular a diferença de dias
             long diferenca = ChronoUnit.DAYS.between(dataInicial, dataFinal);
