@@ -179,6 +179,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         btnBuscar.setText("Buscar");
         btnBuscar.setBorder(new javax.swing.border.MatteBorder(null));
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelLocacaoLayout = new javax.swing.GroupLayout(painelLocacao);
         painelLocacao.setLayout(painelLocacaoLayout);
@@ -383,9 +388,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {
+        locacaoTableModel.atualizarLista(
+                locacaoController.buscarLocacoes(txtCpf.getText(), txtPlaca.getText())
+        );
+        tableLocacao.updateUI();
+    }
+
 
     public static void main(String args[]) {
-
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
