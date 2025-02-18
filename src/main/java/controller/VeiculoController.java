@@ -3,6 +3,7 @@ package controller;
 import model.Veiculo;
 import repository.VeiculoRepository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class VeiculoController {
@@ -16,8 +17,8 @@ public class VeiculoController {
         repository.save(veiculo);
     }
 
-    public List<Veiculo> getByTipoDisponivel(String tipo) {
-        return repository.getByTipoDisponivel(tipo);
+    public List<Veiculo> getByTipoDisponivel(String tipo, LocalDate dataInicio, LocalDate dataFim) {
+        return repository.getByTipoDisponivel(tipo, dataInicio, dataFim);
     }
 
     public void alterarDisponibilidade(int id, boolean disponibilidade) {

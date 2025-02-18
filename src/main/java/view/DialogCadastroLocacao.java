@@ -18,6 +18,7 @@ import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -68,6 +69,9 @@ public class DialogCadastroLocacao extends javax.swing.JDialog {
                 txtDataFinal.setEnabled(false);
                 txtDataFinal.setDate(null);
             }
+            motoTableModel.setMotos(new ArrayList<>());
+            carroTableModel.setCarros(new ArrayList<>());
+            tblVeiculos.setModel(carroTableModel);
 
         });
 
@@ -76,22 +80,11 @@ public class DialogCadastroLocacao extends javax.swing.JDialog {
             calcularAluguel();
         });
 
-
-        carregarCarros();
-        carregarMotos();
-    }
-
-    private void carregarCarros() {
-        List<Carro> carros = (List<Carro>) (List<?>) controller.getByTipoDisponivel("Carro");
-        carroTableModel = new CarroTableModel(carros);
+        carroTableModel = new CarroTableModel(new ArrayList<>());
         tblVeiculos.setModel(carroTableModel);
-        tblVeiculos.updateUI();
+        motoTableModel = new MotoTableModel(new ArrayList<>());
     }
 
-    private void carregarMotos() {
-        List<Moto> motos = (List<Moto>) (List<?>) controller.getByTipoDisponivel("Moto");
-        motoTableModel = new MotoTableModel(motos);
-    }
 
     private void calcularAluguel() {
         if (txtDataFinal.getDate() == null || txtDataInicial.getDate() == null || veiculo == null) {
@@ -350,7 +343,11 @@ public class DialogCadastroLocacao extends javax.swing.JDialog {
         cliente = controller.getClienteByCpf(txtCpf.getText());
         if (cliente != null) {
             lblNomeCliente.setText("Nome: " + cliente.getNome());
+            if (veiculo != null) {
+                btnCadastrar.setEnabled(true);
+            }
         } else {
+            btnCadastrar.setEnabled(false);
             lblNomeCliente.setText("Cliente não encontrado");
         }
     }//GEN-LAST:event_txtCpfKeyReleased

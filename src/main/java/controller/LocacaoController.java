@@ -5,6 +5,7 @@ import model.Locacao;
 import model.Veiculo;
 import repository.LocacaoRepository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class LocacaoController {
@@ -16,8 +17,8 @@ public class LocacaoController {
         return clienteController.getByCpf(cpf);
     }
 
-    public List<Veiculo> getByTipoDisponivel(String tipo) {
-        return veiculoController.getByTipoDisponivel(tipo);
+    public List<Veiculo> getByTipoDisponivel(String tipo, LocalDate dataInicial, LocalDate dataFinal) {
+        return veiculoController.getByTipoDisponivel(tipo, dataInicial, dataFinal);
     }
 
     public void save(Locacao locacao) {
@@ -31,5 +32,9 @@ public class LocacaoController {
 
     public List<Locacao> getLocacoesAtivas() {
         return repository.getAllAtivas();
+    }
+
+    public List<Locacao> buscarLocacoes(String cpf, String placa) {
+        return repository.findByCpfAndPlaca(cpf, placa);
     }
 }

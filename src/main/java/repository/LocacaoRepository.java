@@ -108,4 +108,28 @@ public class LocacaoRepository {
             session.close();
         }
     }
+
+    public List<Locacao> findByCpfAndPlaca(String cpf, String placa) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+        List<Locacao> locacoes = null;
+        try {
+            transaction = session.beginTransaction();
+            locacoes = session.createQuery(
+                            "from Locacao l WHERE (l.cliente.cpf = :cpf OR :cpf = '') AND " +
+                                    "(l.veiculo.placa = :placa OR :cpf = '')", Locacao.class)
+                    .setParameter("cpf", cpf)
+                    .setParameter("placa", placa)
+                    .list();
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return locacoes;
+    }
 }

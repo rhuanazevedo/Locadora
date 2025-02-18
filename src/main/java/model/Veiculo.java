@@ -25,7 +25,6 @@ public abstract class Veiculo {
     protected String categoria;
     protected int quantidade;
     protected int ano;
-    protected boolean disponivel;
     protected double valorDiaria;
 
     @OneToMany(mappedBy = "veiculo", cascade = CascadeType.REMOVE)
@@ -39,11 +38,6 @@ public abstract class Veiculo {
         this.ano = ano;
         this.valorDiaria = valorDiaria;
         this.locacoes = new ArrayList<>();
-        this.disponivel = true;
-    }
-
-    protected void alterarDisponibilidade() {
-        disponivel = !disponivel;
     }
 
 }

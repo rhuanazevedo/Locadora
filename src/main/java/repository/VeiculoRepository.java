@@ -1,10 +1,13 @@
 package repository;
 
+import model.Carro;
+import model.Moto;
 import model.Veiculo;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.HibernateUtil;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class VeiculoRepository {
@@ -31,22 +34,34 @@ public class VeiculoRepository {
         }
     }
 
-    public List<Veiculo> getByTipoDisponivel(String tipo) {
+    public List<Veiculo> getByTipoDisponivel(String tipo, LocalDate dataInicial, LocalDate dataFinal) {
         session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;
         List<Veiculo> veiculos = null;
 
         try {
             transaction = session.beginTransaction();
-            if (tipo.equalsIgnoreCase("Carro")) {
-                veiculos = session.createQuery(
-                                "FROM Veiculo v WHERE v.class = Carro AND v.disponivel = true", Veiculo.class)
-                        .getResultList();
-            } else {
-                veiculos = session.createQuery(
-                                "FROM Veiculo v WHERE v.class = Moto AND v.disponivel = true", Veiculo.class)
-                        .getResultList();
-            }
+
+            String hql = """
+            SELECT v FROM Veiculo v 
+            WHERE TYPE(v) = :tipo 
+            AND v.id NOT IN (
+                SELECT l.veiculo.id FROM Locacao l
+                WHERE l.ativo = true 
+                AND (
+                    (l.dataLocacao BETWEEN :dataInicial AND :dataFinal) OR
+                    (l.dataDevolucao BETWEEN :dataInicial AND :dataFinal) OR
+                    (:dataInicial BETWEEN l.dataLocacao AND l.dataDevolucao) OR
+                    (:dataFinal BETWEEN l.dataLocacao AND l.dataDevolucao)
+                )
+            )
+        """;
+
+            veiculos = session.createQuery(hql, Veiculo.class)
+                    .setParameter("tipo", tipo.equalsIgnoreCase("Carro") ? Carro.class : Moto.class)
+                    .setParameter("dataInicial", dataInicial)
+                    .setParameter("dataFinal", dataFinal)
+                    .getResultList();
 
             transaction.commit();
         } catch (Exception e) {
@@ -60,6 +75,7 @@ public class VeiculoRepository {
 
         return veiculos;
     }
+
 
 
     public Veiculo getById(int id) {
@@ -129,7 +145,6 @@ public class VeiculoRepository {
             transaction = session.beginTransaction();
             Veiculo veiculo = session.get(Veiculo.class, id);
             if (veiculo != null) {
-                veiculo.setDisponivel(disponivel);
                 session.merge(veiculo); // Atualiza o estado do objeto no banco
             }
             transaction.commit();
