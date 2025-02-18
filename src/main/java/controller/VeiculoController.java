@@ -20,6 +20,8 @@ public class VeiculoController {
         return repository.getByTipoDisponivel(tipo);
     }
 
-
+    public void alterarDisponibilidade(int id, boolean disponibilidade) {
+        repository.alterarDisponibilidade(id, disponibilidade);
+    }
 
 }

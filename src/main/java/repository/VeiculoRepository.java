@@ -121,4 +121,26 @@ public class VeiculoRepository {
             session.close();
         }
     }
+
+    public void alterarDisponibilidade(int id, boolean disponivel) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            Veiculo veiculo = session.get(Veiculo.class, id);
+            if (veiculo != null) {
+                veiculo.setDisponivel(disponivel);
+                session.merge(veiculo); // Atualiza o estado do objeto no banco
+            }
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+
 }

@@ -22,6 +22,7 @@ public class LocacaoController {
 
     public void save(Locacao locacao) {
         repository.save(locacao);
+        veiculoController.alterarDisponibilidade(locacao.getVeiculo().getId(), false);
     }
 
     public List<Locacao> getALl() {
