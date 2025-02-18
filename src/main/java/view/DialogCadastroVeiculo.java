@@ -332,11 +332,17 @@ public class DialogCadastroVeiculo extends javax.swing.JDialog {
         if (tipo.equals("Carro")) {
             lblCB.setText("Possui AC:");
             lblPortaCilindrada.setText("Nº de Portas: ");
-            model = new DefaultComboBoxModel<>(new String[]{"Sedã", "Hatch", "SUV"});
+            model = new DefaultComboBoxModel<>(new String[]{
+                    "Sedã", "Hatch", "SUV", "Picape", "Conversível",
+                    "Perua", "Coupé", "Minivan", "Off-road", "Elétrico"
+            });
         } else {
             lblCB.setText("Possui Baú:");
             lblPortaCilindrada.setText("Cilindrada: ");
-            model = new DefaultComboBoxModel<>(new String[]{"Esportiva", "Custom", "Scooter"});
+            model = new DefaultComboBoxModel<>(new String[]{
+                    "Esportiva", "Custom", "Scooter", "Naked", "Touring",
+                    "Trail", "Big Trail", "Motocross", "Street", "Triciclo"
+            });
         }
         cbCategoria.setModel(model);
     }

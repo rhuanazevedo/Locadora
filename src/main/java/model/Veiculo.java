@@ -23,7 +23,6 @@ public abstract class Veiculo {
     protected String placa;
     protected String modelo;
     protected String categoria;
-    protected int quantidade;
     protected int ano;
     protected double valorDiaria;
 

@@ -10,7 +10,7 @@ import java.util.List;
 public class VeiculoTableModel extends AbstractTableModel {
 
     private final List<Veiculo> veiculos;
-    private final String[] colunas = {"Placa", "Modelo", "Categoria", "Quantidade", "Ano", "Valor Diária", "Cilindrada", "Possui Baú", "Número de Portas", "Ar Condicionado"};
+    private final String[] colunas = {"Placa", "Modelo", "Categoria", "Ano", "Valor Diária", "Cilindrada", "Possui Baú", "Número de Portas", "Ar Condicionado"};
 
     public VeiculoTableModel(List<Veiculo> veiculos) {
         this.veiculos = veiculos;
@@ -38,30 +38,28 @@ public class VeiculoTableModel extends AbstractTableModel {
             case 2:
                 return veiculo.getCategoria();
             case 3:
-                return veiculo.getQuantidade();
-            case 4:
                 return veiculo.getAno();
-            case 5:
+            case 4:
                 return veiculo.getValorDiaria();
-            case 6:
+            case 5:
                 if (veiculo instanceof Moto) {
                     return ((Moto) veiculo).getCilindrada();
                 } else {
                     return null;
                 }
-            case 7:
+            case 6:
                 if (veiculo instanceof Moto) {
                     return ((Moto) veiculo).isPossuiBau() ? "Sim" : "Não";
                 } else {
                     return null;
                 }
-            case 8:
+            case 7:
                 if (veiculo instanceof Carro) {
                     return ((Carro) veiculo).getNumPortas();
                 } else {
                     return null;
                 }
-            case 9:
+            case 8:
                 if (veiculo instanceof Carro) {
                     return ((Carro) veiculo).isArCondicionado() ? "Sim" : "Não";
                 } else {

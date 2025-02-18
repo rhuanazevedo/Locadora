@@ -8,7 +8,7 @@ import java.util.List;
 public class CarroTableModel extends AbstractTableModel {
 
     private List<Carro> carros;
-    private final String[] colunas = {"Placa", "Modelo", "Categoria", "Quantidade", "Ano", "Valor Diária", "Número de Portas", "Ar Condicionado"};
+    private final String[] colunas = {"Placa", "Modelo", "Categoria", "Ano", "Valor Diária", "Número de Portas", "Ar Condicionado"};
 
     public CarroTableModel(List<Carro> carros) {
         this.carros = carros;
@@ -32,16 +32,13 @@ public class CarroTableModel extends AbstractTableModel {
             case 0: return carro.getPlaca();
             case 1: return carro.getModelo();
             case 2: return carro.getCategoria();
-            case 3: return carro.getQuantidade();
-            case 4: return carro.getAno();
-            case 5: return carro.getValorDiaria();
-            case 6: return carro.getNumPortas();
-            case 7: return carro.isArCondicionado() ? "Sim" : "Não";
+            case 3: return carro.getAno();
+            case 4: return carro.getValorDiaria();
+            case 5: return carro.getNumPortas();
+            case 6: return carro.isArCondicionado() ? "Sim" : "Não";
             default: return null;
         }
     }
-
-
 
     public Carro getCarroAt(int rowIndex) {
         return carros.get(rowIndex);

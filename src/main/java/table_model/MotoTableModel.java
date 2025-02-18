@@ -9,7 +9,7 @@ import java.util.List;
 public class MotoTableModel extends AbstractTableModel {
 
     private List<Moto> motos;
-    private final String[] colunas = {"Placa", "Modelo", "Categoria", "Quantidade", "Ano", "Valor Diária", "Cilindrada", "Possui Baú"};
+    private final String[] colunas = {"Placa", "Modelo", "Categoria", "Ano", "Valor Diária", "Cilindrada", "Possui Baú"};
 
     public MotoTableModel(List<Moto> motos) {
         this.motos = motos;
@@ -33,11 +33,10 @@ public class MotoTableModel extends AbstractTableModel {
             case 0: return moto.getPlaca();
             case 1: return moto.getModelo();
             case 2: return moto.getCategoria();
-            case 3: return moto.getQuantidade();
-            case 4: return moto.getAno();
-            case 5: return moto.getValorDiaria();
-            case 6: return moto.getCilindrada();
-            case 7: return moto.isPossuiBau()  ? "Sim" : "Não";
+            case 3: return moto.getAno();
+            case 4: return moto.getValorDiaria();
+            case 5: return moto.getCilindrada();
+            case 6: return moto.isPossuiBau()  ? "Sim" : "Não";
             default: return null;
         }
     }
